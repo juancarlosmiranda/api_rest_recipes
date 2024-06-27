@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="bb9eaf42-b842-4835-8bfe-20f5bb3ae59b" name="broadcast.db Mapping">
+      <data-sources db="dc54d934-7a55-479b-8557-95a9e4b0c259" />
+    </mapping>
+  </component>
+</project>

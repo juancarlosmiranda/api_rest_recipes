@@ -17,7 +17,7 @@ COMMON_ENV_PATH='bin/activate'
 
 # software folders names
 ROOT_FOLDER_NAME='rest_api_recipes'
-SERVER_REST_API_NAME='server_rest_api'
+SERVER_REST_API_NAME='rest_api_server'
 
 # environment folders
 ENV_NAME='_venv'
