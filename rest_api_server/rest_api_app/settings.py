@@ -1,11 +1,9 @@
 """
-Project: AK_ACQS Azure Kinect Acquisition System https://github.com/GRAP-UdL-AT/ak_acquisition_system
-
-* PAgFRUIT http://www.pagfruit.udl.cat/en/
-* GRAP http://www.grap.udl.cat/
+Project: REST API RECIPES https://github.com/juancarlosmiranda/rest_api_recipes
 
 Author: Juan Carlos Miranda. https://github.com/juancarlosmiranda
-Date: August 2021
+Date: June 2024
+Description:
 
 Usage:
 

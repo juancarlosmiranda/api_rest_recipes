@@ -6,6 +6,7 @@ pip install urllib3
 pip install certifi
 
 
+Diagrama de estados, state diagram
 Add installation instructions.
 Add connecton testing.
 If cnofiguration file is not defined, then maintain the loop working

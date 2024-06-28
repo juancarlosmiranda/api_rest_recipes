@@ -21,21 +21,23 @@ git clone https://github.com/juancarlosmiranda/rest_api_recipes.git
 ## Install and run
 In Linux systems execute as follows:
 ```
+# Project's hierarchy
 |__/development/
    |__/rest_api_recipes/
    |   |__/rest_api_server/
-   |   |    |__/YYY/
-   |   |        |__/ZZZ/
-   |   |        |    |__/AAAAtmpToLearn/
-   |   |        |       |__/AAAB/
+   |   |    |__/docs/
+   |   |    |__/rest_api_app/
+   |   |    |__/scripts/   
+   |   |    |__/src/
+   
    |__/WEB_UI/
-   |   |__/byDefects/
-   |   |    |__/PSMet2/
-   |   |        |__/SegMarkExp/
-   |   |        |    |__/tmpToLearn/
-   |   |        |       |__/IBR/
+   |   |__/TO_COMPLETE/
+   |   |    |__/TO_COMPLETE/
+   |   |        |__/TO_COMPLETE/
+   |   |        |    |__/TO_COMPLETE/
+   |   |        |       |__/TO_COMPLETE/
 
-
+# Python environment hierarchy
 |__/development_env/
    |__/rest_api_recipes_venv/
    |   |__/rest_api_server-venv/
