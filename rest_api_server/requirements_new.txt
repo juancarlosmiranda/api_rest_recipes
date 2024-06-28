@@ -6,6 +6,28 @@ pip install django-extensions
 pip install django-rest-framework
 pip install django
 pip install dj-database-url
+pip install asgiref
+pip install certifi
+pip install cffi
+pip install chardet
+pip install charset-normalizer
+pip install cryptography
+pip install Deprecated
+pip install idna
+pip install jwcrypto
+pip install oauthlib
+pip install pkg_resources
+pip install pycparser
+pip install pytz
+pip install requests
+pip install six
+pip install sqlparse
+pip install typing-extensions
+pip install urllib3
+pip install whitenoise
+pip install wrapt
+
+
 
 
 djangorestframework==3.12.4
@@ -39,23 +61,4 @@ whitenoise==5.3.0
 wrapt==1.12.1
 
 
-pip install asgiref
-pip install certifi
-pip install cffi
-pip install chardet
-pip install charset-normalizer
-pip install cryptography
-pip install Deprecated
-pip install idna
-pip install jwcrypto
-pip install oauthlib
-pip install pkg_resources
-pip install pycparser
-pip install pytz
-pip install requests
-pip install six
-pip install sqlparse
-pip install typing-extensions
-pip install urllib3
-pip install whitenoise
-pip install wrapt
+
