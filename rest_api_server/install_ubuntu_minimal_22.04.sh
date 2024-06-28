@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 #
-# Ubuntu 22.04 LTS
+# Ubuntu 22.04 LTS minimal
+# Scrtip for setting Django apps
 # Update from install_ubuntu_minimal_20.04.sh
 # 28/06/2024
 #
@@ -12,12 +13,23 @@ sudo apt-get autoremove
 sudo apt-get autoclean
 
 # Install network tools
-sudo apt-get install -y net-tools
+sudo apt-get -y install net-tools
+sudo apt-get -y install git
+sudo apt-get -y install curl
+sudo apt-get -y install nano
+
+# Install Python development tools
+sudo apt-get -y install python3
+sudo apt-get -y install python3-dev
+sudo apt-get -y install python3-venv
+sudo apt-get -y install python3-pip
+
+
+# -------------------------
 
 
 
 sudo ubuntu-drivers autoinstall
-
 
 sudo apt-get install -y openssh-server
 sudo systemctl enable ssh --now
@@ -29,7 +41,6 @@ sudo systemctl start ssh
 # Install common apps
 sudo apt-get install -y mlocate
 sudo apt-get install -y locate
-sudo apt -y install -y curl
 sudo apt -y install -y git
 sudo apt-get install -y ffmpeg
 sudo apt-get install -y dialog

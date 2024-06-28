@@ -1,53 +1,67 @@
 #!/bin/bash
-# Project: AK_ACQS Azure Kinect Acquisition System https://github.com/GRAP-UdL-AT/ak_acquisition_system
-#
-# * PAgFRUIT http://www.pagfruit.udl.cat/en/
-# * GRAP http://www.grap.udl.cat/
+# Project: REST API RECIPES https://github.com/juancarlosmiranda/rest_api_recipes
 #
 # Author: Juan Carlos Miranda. https://github.com/juancarlosmiranda
+# Date: June 2024
+# Description:
+#
+# Use:
+#
 
 set -e
 
-FILENAME_ZIP='ak_acquisition_system-main.zip'
-REQUERIMENTS_LINUX='requirements_linux_old.txt'
+#FILENAME_ZIP='ak_acquisition_system-main.zip'
+REQUERIMENTS_LINUX='requirements_linux.txt'
 
 # commands definitions
+
+#UNZIP_CMD=`which unzip`
+#MKDIR_CMD='mkdir -p'
+#CHMOD_CMD='chmod 755'
 PYTHON_CMD='python3'
-UNZIP_CMD=`which unzip`
-MKDIR_CMD='mkdir -p'
-CHMOD_CMD='chmod 755'
 PIP_INSTALL_CMD='pip install'
 PIP_UPDATE_CMD='pip install --upgrade pip'
 
 # files extensions names
-EXT_SCRIPTS_SH='*.sh'
-EXT_ZIP='.zip'
+#EXT_SCRIPTS_SH='*.sh'
+#EXT_ZIP='.zip'
 
 # folders names definitions
 DEVELOPMENT_PATH='development'
-DEVELOPMENT_ENV_PATH='development_env'
-COMMON_ENV_PATH='bin/activate'
+DEVELOPMENT_PATH_ENV='development_env'
+ENV_ACIVATE_CMD='bin/activate'
 
 
 # software folders names
-ROOT_FOLDER_NAME='ak_acquisition_system-main' 
-SERVER_REST_API_NAME='rest_api_server'
+REPOSITORY_NAME='rest_api_recipes'
+REST_API_SERVER_NAME='rest_api_server'
 
 
 # project folders
-ROOT_FOLDER_F=$HOME/$DEVELOPMENT_PATH/$ROOT_FOLDER_NAME/
-SERVER_REST_API_F=$ROOT_FOLDER_F$SERVER_REST_API_NAME/
+REPOSITORY_PATH=$HOME/$DEVELOPMENT_PATH/$REPOSITORY_NAME/
+REST_API_SERVER_PATH=$REPOSITORY_PATH$REST_API_SERVER_NAME/
 
 
 # environment folders
 ENV_NAME='_venv'
-ROOT_ENV_F=$HOME/$DEVELOPMENT_ENV_PATH/$ROOT_FOLDER_NAME$ENV_NAME/
-SERVER_REST_API_ENV_F=$ROOT_ENV_F$SERVER_REST_API_NAME$ENV_NAME/
+REPOSITORY_PATH_ENV=$HOME/$DEVELOPMENT_PATH_ENV/$REPOSITORY_NAME$ENV_NAME/
+REST_API_SERVER_PATH_ENV=$REPOSITORY_PATH_ENV$REST_API_SERVER_NAME$ENV_NAME/
+
+echo "-------------------------------------"
+echo "Creating Python virtual environment"
+echo "-------------------------------------"
+echo "REPOSITORY_PATH="$REPOSITORY_PATH
+echo "REST_API_SERVER_PATH_ENV = "$REST_API_SERVER_PATH_ENV
+
+echo "-------------------------------------"
+echo "Installing requirements"
+echo "-------------------------------------"
+echo "requirements.txt = "$REST_API_SERVER_PATH$REQUERIMENTS_LINUX
 
 # creating environments automatically
-$PYTHON_CMD -m venv $SERVER_REST_API_ENV_F
-source $SERVER_REST_API_ENV_F$COMMON_ENV_PATH
+$PYTHON_CMD -m venv $REST_API_SERVER_PATH_ENV
+source $REST_API_SERVER_PATH_ENV$ENV_ACIVATE_CMD
 $PIP_UPDATE_CMD
-$PIP_INSTALL_CMD -r $SERVER_REST_API_F$REQUERIMENTS_LINUX
+$PIP_INSTALL_CMD -r $REST_API_SERVER_PATH$REQUERIMENTS_LINUX
 deactivate
 

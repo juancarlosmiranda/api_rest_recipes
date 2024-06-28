@@ -1,29 +1,35 @@
 #!/bin/bash
-
-# Project: AK_ACQS Azure Kinect Acquisition System https://github.com/GRAP-UdL-AT/ak_acquisition_system
-#
-# * PAgFRUIT http://www.pagfruit.udl.cat/en/
-# * GRAP http://www.grap.udl.cat/
+# Project: REST API RECIPES https://github.com/juancarlosmiranda/rest_api_recipes
 #
 # Author: Juan Carlos Miranda. https://github.com/juancarlosmiranda
+# Date: June 2024
+# Description:
+#
+# Use:
+#
 
 # commands definitions
 PYTHON_CMD='python3'
 
 # folders names definitions
-DEVELOPMENT_ENV_PATH='development_env'
-COMMON_ENV_PATH='bin/activate'
-
+DEVELOPMENT_PATH_ENV='development_env'
+ENV_ACIVATE_CMD='bin/activate'
 
 # software folders names
-ROOT_FOLDER_NAME='rest_api_recipes'
-SERVER_REST_API_NAME='rest_api_server'
+REPOSITORY_NAME='rest_api_recipes'
+REST_API_SERVER_NAME='rest_api_server'
+
 
 # environment folders
 ENV_NAME='_venv'
-ROOT_ENV_F=$HOME/$DEVELOPMENT_ENV_PATH/$ROOT_FOLDER_NAME$ENV_NAME/
-SERVER_REST_API_ENV_F=$ROOT_ENV_F$SERVER_REST_API_NAME$ENV_NAME/
-source $SERVER_REST_API_ENV_F$COMMON_ENV_PATH
+REPOSITORY_PATH_ENV=$HOME/$DEVELOPMENT_PATH_ENV/$REPOSITORY_NAME$ENV_NAME/
+REST_API_SERVER_PATH_ENV=$REPOSITORY_PATH_ENV$REST_API_SERVER_NAME$ENV_NAME/
 
+
+source $REST_API_SERVER_PATH_ENV$ENV_ACIVATE_CMD
 python manage.py runserver 0:9000
+
+echo "-------------------------------------"
+echo "Write deactivate"
+echo "-------------------------------------"
 deactivate
