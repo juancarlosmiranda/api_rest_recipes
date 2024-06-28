@@ -1,4 +1,4 @@
-# AK_ACQS - REST API server
+# REST API server
 
 REST API server that centralizes the sending and receiving of remote commands. It is responsible for coordinating
 actions between remote clients and a graphical user console. Where each remote client can have different devices

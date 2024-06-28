@@ -1,22 +1,27 @@
 """
-Project: AK_ACQS Azure Kinect Acquisition System https://github.com/GRAP-UdL-AT/ak_acquisition_system
-
-* PAgFRUIT http://www.pagfruit.udl.cat/en/
-* GRAP http://www.grap.udl.cat/
+Project: REST API RECIPES https://github.com/juancarlosmiranda/rest_api_recipes
 
 Author: Juan Carlos Miranda. https://github.com/juancarlosmiranda
-Date: August 2021
+Date: June 2024
 Description:
 
-Description: This file contains tests for the API urls endpoints
 Usage
-    python3 manage.py test users.tests.tests_rest_api_endpoints
+Run all tests.
+* python manage.py test
+Run all tests defined in tests_rest_api_endpoints.py
+* python manage.py test src.tests.tests_rest_api_endpoints
+
+Run all tests defined in class EndpointsTestCase
+* python manage.py test src.tests.tests_rest_api_endpoints.EndpointsTestCase
+
+Run one specific test defined inside class EndpointsTestCase
+* python manage.py test src.tests.tests_rest_api_endpoints.EndpointsTestCase.test_send_remote_cmd_enable_remote_client
 
 """
 
 from django.test import TestCase
 import requests
-
+import os
 
 class EndpointsTestCase(TestCase):
     """
@@ -42,6 +47,9 @@ class EndpointsTestCase(TestCase):
         :return:
         """
         print('--- Setting test cases ---')
+        TEST_CASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        print(f'TEST_CASE_DIR={TEST_CASE_DIR}')
+        print()
         endpoint = self._host_test + self._endpoint_set_connection
         data = {'username': self._user_name, 'password': self._user_pass}
         r = requests.post(endpoint, data=data).json()

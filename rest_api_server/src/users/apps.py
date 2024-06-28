@@ -1,11 +1,11 @@
 """
-Project: Fruit Size Estimation
+Project: REST API RECIPES https://github.com/juancarlosmiranda/rest_api_recipes
+
 Author: Juan Carlos Miranda. https://github.com/juancarlosmiranda
-Date: August 2021
+Date: June 2024
 Description:
 
 Use:
-
 """
 from django.apps import AppConfig
 

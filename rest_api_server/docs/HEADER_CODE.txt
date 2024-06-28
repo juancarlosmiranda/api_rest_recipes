@@ -1,0 +1,42 @@
+# TEMPLATE EMPTY HEADER
+"""
+Project:
+Author:
+Date:
+Description:
+...
+
+Use:
+"""
+
+# TEMPLATE PROJECT
+
+"""
+Project: REST API RECIPES https://github.com/juancarlosmiranda/rest_api_recipes
+
+Author: Juan Carlos Miranda. https://github.com/juancarlosmiranda
+Date: June 2024
+Description:
+
+Use:
+"""
+
+# HEADER FOR BASH SCRIPTS
+# Project: REST API RECIPES https://github.com/juancarlosmiranda/rest_api_recipes
+#
+# Author: Juan Carlos Miranda. https://github.com/juancarlosmiranda
+# Date: June 2024
+# Description:
+#
+# Use:
+#
+
+REM HEADER FOR WINDOW SYSTEMS
+REM Project: REST API RECIPES https://github.com/juancarlosmiranda/rest_api_recipes
+REM
+REM Author: Juan Carlos Miranda. https://github.com/juancarlosmiranda
+REM Date: June 2024
+REM Description:
+REM
+REM Use:
+REM
