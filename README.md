@@ -115,3 +115,10 @@ ROOT_URLCONF = 'api_rest.urls'
 
 rest api server
 web ui interface
+
+
+# Installtion of a Linux server
+Provides and environment with libraries and minimal requirements.
+```
+install_ubuntu_minimal_22.04.sh
+```
