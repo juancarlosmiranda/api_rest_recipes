@@ -7,20 +7,20 @@ Description:
 
 Use:
 """
-
+from django.contrib import admin
 from django.urls import path
 from django.urls import include
-from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-from rest_api_app.settings import REST_API_ROOT
+#from rest_api_app.settings import REST_API_ROOT
 
 router = DefaultRouter()
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  # admin web site interface
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-    path('authentication/', include('src.users.urls')),
-    path('rest_api_app/', include(router.urls)),
-    path(REST_API_ROOT, include('src.control_panel.urls')),
-    path(REST_API_ROOT, include('src.clients.urls')),
+    # Oauth2 provider, it is like an external service
+    path('users/', include('src.users.urls')),
+    #path('rest_api_app/', include(router.urls)),
+    #path(REST_API_ROOT, include('src.control_panel.urls')),
+    #path(REST_API_ROOT, include('src.clients.urls')),
 ]

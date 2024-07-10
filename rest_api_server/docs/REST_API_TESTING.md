@@ -4,16 +4,31 @@
 If you want to test the server use curl as following:
 
 ### Authentication commands steps
+Register a user for the first time.
 ```
-curl -d "username=user1&password=strong_pass1" http://localhost:9000/authentication/register/
-curl -d "username=user1&password=strong_pass1" http://localhost:9000/authentication/login/
-curl -d "username=user1&password=strong_pass1" http://localhost:9000/authentication/login/refresh/
+curl -d "username=user1&password=strong_pass1" http://localhost:9000/users/register/
+```
+It gives you an access token ACCESS_TOKEN_HERE and a REFRESH_TOKEN_HERE.
+
+Login process.
+```
+curl -X POST http://localhost:9000/users/login/ -d "username=user1&password=strong_pass1"
+```
+ACCESS_TOKEN_HERE
+
+Refresh token.
+```
+curl -X POST http://localhost:9000/users/refresh/ -d "refresh_token=REFRESH_TOKEN_HERE"
+```
+Test for valid grant, test for invalid grant
+
+
+curl -X POST http://localhost:9000/users/logout/ -d "token=Vm8qU8vLcri8SiDp1hTv2BUtvHO4mj"
+Logout process.
+```
+curl -X POST http://localhost:9000/users/logout/ -d "token=ACCESS_TOKEN_HERE"
 ```
 
-### /logout/
-```
-curl -d "token=A_TOKEN_HERE" http://localhost:9000/authentication/logout/
-```
 
 ### /commands/
 ```

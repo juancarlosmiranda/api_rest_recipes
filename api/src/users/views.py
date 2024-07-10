@@ -16,7 +16,9 @@ from rest_framework.views import APIView
 from rest_framework import permissions
 
 from .serializers import CreateUserSerializer
-from rest_api_app.settings import REST_API_SERVICE_URL, CLIENT_IDENTIFIER_STR, CLIENT_SECRET
+from api.settings import REST_API_SERVICE_URL, CLIENT_IDENTIFIER_STR, CLIENT_SECRET
+
+
 
 
 class UserRegisterView(APIView):
@@ -26,6 +28,7 @@ class UserRegisterView(APIView):
         serializer = CreateUserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            # it sends to an internal oauth2 server in /api
             r = requests.post('http://127.0.0.1:9000/o/token/',
                               data={
                                   'grant_type': 'password',
@@ -38,6 +41,7 @@ class UserRegisterView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class SessionLoginView(APIView):
     permission_classes = (permissions.AllowAny,)
