@@ -14,7 +14,7 @@ Usage:
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(f'BASE_DIR={BASE_DIR}')
+#print(f'BASE_DIR={BASE_DIR}')
 
 DEBUG = True
 
@@ -25,7 +25,7 @@ SERVER_PORT = ':9000'
 REST_API_SERVICE_URL = SERVER_IP + SERVER_PORT
 REST_API_ROOT = 'v1/'  # Change the version of REST API here
 ROOT_URLCONF = 'rest_api_app.urls'
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' # Static files (CSS, JavaScript, Images) https://docs.djangoproject.com/en/2.0/howto/static-files/
 WSGI_CONF = 'rest_api_app.wsgi.application'
 # -----------------------
 # In Linux use $ echo "a_password_to_set" | sha256sum

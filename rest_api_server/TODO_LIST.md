@@ -54,15 +54,21 @@ def run_tests(self, test_labels, some=None, **kwargs):
 add any parameter like some=None
 
 
-Test unitarios
------------------
+# Unit test
+* [x] Reverse urls tests by module. (tests_users_reverse_url.py)
+* [x] Views unit tests. (tests_users_views.py)
+* [x] Endpoint url test while server running. (tests_users_endpoints.py)
 
-Test suite
-Test de urls endpoints
-Test de vistas
-Test de serializers
-Test de modelos / tablas
-Test de APIS
-Colocar datos de prueba y borrar la base de datos de prueba.
+* [] Test de serializers
+* [] Test de modelos / tablas
+* [] Test de APIS
+* []Test suite
+* Colocar datos de prueba y borrar la base de datos de prueba.
+
+Modules to apply unit tests:
+* users/
+* clients/
+* control_panel/
 
 
+https://docs.python.org/3/library/unittest.html

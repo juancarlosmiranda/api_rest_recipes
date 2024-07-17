@@ -40,6 +40,7 @@ class RemoteClientsViewSet(APIView):
         queryset = RemoteClients.objects.all()
         serializer = RemoteClientsSerializer(queryset, many=True)
         print(serializer.data)
+        print(Response(serializer.data, status=status.HTTP_200_OK))
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, format=None):
@@ -117,10 +118,41 @@ class CommandBroadcastList(APIView):
         }
         # Example of a command
         # {"id":7,"command":"STOP_RECORDING","created":"2021-08-03T17:02:57.596946Z"}
-
         return Response(content)
 
 
+class ConfigRemoteClientsBroadcast(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, request, format=None):
+        print("GET config broadcast-->")
+        search_record = BroadcastConfig.objects.order_by('created').last()
+        serializer = BroadcastConfigSerializer(search_record)
+        print(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, format=None):
+        print("POST config broadcast-->")
+        if not (request.data.get('sleep_time')):
+            return Response(self.badrequest, status=status.HTTP_400_BAD_REQUEST)
+
+        # todo: check int values
+        print(request.data['sleep_time'])
+        created_field = timezone.now()
+        broadcast_config_record = BroadcastConfig(sleep_time=request.data['sleep_time'], created=created_field)
+        broadcast_config_record.save()
+        content = {
+            'status': status.HTTP_201_CREATED,
+            'data': [
+                {
+                    'pk': broadcast_config_record.pk,
+                },
+            ]
+        }
+        return Response(content, status=status.HTTP_201_CREATED)
+
+
+# TODO: ADD TEST, COMPLETE THIS CLASS, THIS CLASS IS INCOMPLETE
 class CommandByClient(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
@@ -153,37 +185,6 @@ class CommandByClient(APIView):
         # -------------------------------------------
         return Response(content)
         # -------------------------------------------
-
-
-class ConfigRemoteClientsBroadcast(APIView):
-    permission_classes = (permissions.IsAuthenticated,)
-
-    def get(self, request, format=None):
-        print("GET config broadcast-->")
-        search_record = BroadcastConfig.objects.order_by('created').last()
-        serializer = BroadcastConfigSerializer(search_record)
-        print(serializer.data)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
-    def post(self, request, format=None):
-        print("POST config broadcast-->")
-        if not (request.data.get('sleep_time')):
-            return Response(self.badrequest, status=status.HTTP_400_BAD_REQUEST)
-
-        # todo: check int values
-        print(request.data['sleep_time'])
-        created_field = timezone.now()
-        broadcast_config_record = BroadcastConfig(sleep_time=request.data['sleep_time'], created=created_field)
-        broadcast_config_record.save()
-        content = {
-            'status': status.HTTP_201_CREATED,
-            'data': [
-                {
-                    'pk': broadcast_config_record.pk,
-                },
-            ]
-        }
-        return Response(content)
 
 # TODO: update status
 # TODO: get instruction

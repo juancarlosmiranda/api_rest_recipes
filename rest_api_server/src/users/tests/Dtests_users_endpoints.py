@@ -51,7 +51,7 @@ class UsersTestCase(TestCase):
     def setUp(self):
         """
         Settings
-        # curl -d "username=user1&password=strong_pass1" http://localhost:9000/authentication/login/
+
         :return:
         """
         print('--- Setting test cases ---')
@@ -109,7 +109,10 @@ class UsersTestCase(TestCase):
     # /login#
     def test_user_login(self):
         """
-        Test register a user
+        Test user login
+
+        curl -d "username=user1&password=strong_pass1" http://localhost:9000/users/login/
+
         :return:
         """
         print('Testing =>', UsersTestCase.test_user_login.__name__)
@@ -119,8 +122,12 @@ class UsersTestCase(TestCase):
 
     # /login#
     def test_user_logout(self):
+        # TODO: TO complete logout
         """
-        Test register a user
+        Test user disconnect
+
+
+
         :return:
         """
         print('Testing =>', UsersTestCase.test_user_logout.__name__)

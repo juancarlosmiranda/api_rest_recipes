@@ -58,9 +58,8 @@ curl -H "Authorization: Bearer A_TOKEN_HERE" -d "uuid=IIUUII&hostname=UNOHOST&os
 ```
 
 ## Authorship
-This project is contributed by [GRAP-UdL-AT](http://www.grap.udl.cat/en/index.html).
-Please contact authors to report bugs juancarlos.miranda@udl.cat
+This project is contributed by .
 
 ## Citation
 If you find this code useful, please consider citing:
-[AK_ACQS - AK Acquisition System](https://github.com/GRAP-UdL-AT/ak_acquisition_system).
+...

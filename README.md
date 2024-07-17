@@ -159,6 +159,7 @@ Run server
 Create a project.
 ```
 python3 -m django startproject api
+django-admin startproject api
 ```
 
 Create migrations files
